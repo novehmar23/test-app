@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_novehmar23_test_app_1777565069252-pr-trigger-input-set
+  identifier: Build_novehmar23_test_app_1777565069252prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_novehmar23_test_app_1777565069252
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
