@@ -26,13 +26,21 @@ pipeline:
                     command: npm install
                   timeout: ""
                   type: Run
-              - step:
-                  identifier: test
-                  name: test
-                  spec:
-                    command: npm run test
-                  timeout: ""
-                  type: Run
+              - parallel:
+                  - step:
+                      identifier: test
+                      name: test
+                      spec:
+                        command: npm run test
+                      timeout: ""
+                      type: Run
+                  - step:
+                      type: Run
+                      name: Run_3_test
+                      identifier: Run_3_test
+                      spec:
+                        shell: Sh
+                        command: echo "Hello there!"
               - step:
                   identifier: dockerbuild
                   name: docker_build
